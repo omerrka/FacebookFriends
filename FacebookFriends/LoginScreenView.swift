@@ -71,11 +71,22 @@ final class LoginScreenView: UIView {
         
     }()
     
+    private let textFieldStackView: UIStackView = {
+           let stackView = UIStackView()
+           stackView.translatesAutoresizingMaskIntoConstraints = false
+           stackView.axis = .vertical
+           stackView.spacing = 18
+           stackView.distribution = .fillEqually
+           return stackView
+       }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(logoImageView, userTextField ,loginButton, passwordTextField)
+        addSubviews(logoImageView, textFieldStackView, loginButton)
         addConstraints()
+        textFieldStackView.addArrangedSubview(userTextField)
+        textFieldStackView.addArrangedSubview(passwordTextField)
         addTapGestureRecognizer()
         
     }
@@ -92,20 +103,16 @@ final class LoginScreenView: UIView {
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200),
             
-            userTextField.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
-            userTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
-            userTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
-            userTextField.heightAnchor.constraint(equalToConstant: 48),
+            textFieldStackView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 48),
+            textFieldStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
+            textFieldStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
+            textFieldStackView.heightAnchor.constraint(equalToConstant: 100),
             
             loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -48),
             loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
             loginButton.heightAnchor.constraint(equalToConstant: 48),
             
-            passwordTextField.topAnchor.constraint(equalTo: userTextField.bottomAnchor, constant: 48),
-            passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
-            passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     

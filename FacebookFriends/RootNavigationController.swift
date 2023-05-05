@@ -28,7 +28,6 @@ final class RootNavigationController: UINavigationController {
         
         self.navigationBar.tintColor = .black
         self.navigationBar.standardAppearance = appearance
-//        self.navigationBar.scrollEdgeAppearance = appearance
 
     }
 }
