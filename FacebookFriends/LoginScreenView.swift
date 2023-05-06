@@ -13,6 +13,7 @@ protocol LoginScreenViewDelegate: AnyObject {
     
 final class LoginScreenView: UIView {
     
+    private let loginScreenViewViewModel = LoginScreenViewViewModel()
     public weak var delegate: LoginScreenViewDelegate?
     
     private let logoImageView: UIImageView = {
@@ -28,8 +29,8 @@ final class LoginScreenView: UIView {
         user.layer.cornerRadius = 10
         user.layer.borderWidth = 2
         user.layer.borderColor = UIColor.systemGray4.cgColor
-        user.textColor = .white
-        user.tintColor = .white
+        user.textColor = .black
+        user.tintColor = .black
         user.textAlignment = .center
         user.font = UIFont.preferredFont(forTextStyle: .title2)
         user.adjustsFontSizeToFitWidth = true
@@ -46,8 +47,8 @@ final class LoginScreenView: UIView {
         password.layer.cornerRadius = 10
         password.layer.borderWidth = 2
         password.layer.borderColor = UIColor.systemGray4.cgColor
-        password.textColor = .white
-        password.tintColor = .white
+        password.textColor = .black
+        password.tintColor = .black
         password.textAlignment = .center
         password.font = UIFont.preferredFont(forTextStyle: .title2)
         password.adjustsFontSizeToFitWidth = true
@@ -84,9 +85,9 @@ final class LoginScreenView: UIView {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(logoImageView, textFieldStackView, loginButton)
-        addConstraints()
         textFieldStackView.addArrangedSubview(userTextField)
         textFieldStackView.addArrangedSubview(passwordTextField)
+        addConstraints()
         addTapGestureRecognizer()
         
     }
@@ -126,7 +127,17 @@ final class LoginScreenView: UIView {
     }
     
     @objc private func pushFriendsListVC(sender: UIButton) {
-        delegate?.pushViewController()
+        guard let userName = userTextField.text else {return}
+        if loginScreenViewViewModel.validUserNames.contains(userName) {
+            delegate?.pushViewController()
+        } else {
+            if userTextField.text == "" {
+                userTextField.placeholder = "Please write your username"
+            } else if userTextField.text != "" {
+                userTextField.text = ""
+                userTextField.placeholder = "Invalid username"
+            }
+        }
     }
 }
 
