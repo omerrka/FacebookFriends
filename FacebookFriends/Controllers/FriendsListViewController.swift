@@ -2,7 +2,7 @@
 //  FriendsListViewController.swift
 //  FacebookFriends
 //
-//  Created by Ömer Karabulu on 5.05.2023.
+//  Created by Ömer Karabulut on 5.05.2023.
 //
 
 import UIKit

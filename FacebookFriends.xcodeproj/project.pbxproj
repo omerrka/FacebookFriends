@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		278AED6C2A06516B00691A98 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AED6B2A06516B00691A98 /* UserAPI.swift */; };
+		278AED6E2A06517500691A98 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AED6D2A06517500691A98 /* NetworkManager.swift */; };
+		278AED702A06521B00691A98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AED6F2A06521B00691A98 /* Constants.swift */; };
+		278AED722A0653EE00691A98 /* UsersResultsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AED712A0653EE00691A98 /* UsersResultsDetails.swift */; };
+		278AED742A065AD700691A98 /* FriendsListViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AED732A065AD700691A98 /* FriendsListViewControllerViewModel.swift */; };
+		278AED762A06685000691A98 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AED752A06685000691A98 /* Users.swift */; };
+		278AED782A06689800691A98 /* UsersResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278AED772A06689800691A98 /* UsersResults.swift */; };
 		27EB85DF2A057BE10027E339 /* LoginScreenViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */; };
 		27F7A56C2A0537B700FB8D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A56B2A0537B700FB8D3A /* AppDelegate.swift */; };
 		27F7A56E2A0537B700FB8D3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A56D2A0537B700FB8D3A /* SceneDelegate.swift */; };
@@ -23,6 +30,13 @@
 /* Begin PBXFileReference section */
 		004EE40847A12CC0B57C8CED /* Pods-FacebookFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriends.debug.xcconfig"; path = "Target Support Files/Pods-FacebookFriends/Pods-FacebookFriends.debug.xcconfig"; sourceTree = "<group>"; };
 		20B03289E736E14B5EE11ACC /* Pods_FacebookFriends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FacebookFriends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		278AED6B2A06516B00691A98 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		278AED6D2A06517500691A98 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		278AED6F2A06521B00691A98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		278AED712A0653EE00691A98 /* UsersResultsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResultsDetails.swift; sourceTree = "<group>"; };
+		278AED732A065AD700691A98 /* FriendsListViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewControllerViewModel.swift; sourceTree = "<group>"; };
+		278AED752A06685000691A98 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		278AED772A06689800691A98 /* UsersResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersResults.swift; sourceTree = "<group>"; };
 		27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewViewModel.swift; sourceTree = "<group>"; };
 		27F7A5682A0537B700FB8D3A /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F7A56B2A0537B700FB8D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +64,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		278AED662A0650AD00691A98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				278AED752A06685000691A98 /* Users.swift */,
+				278AED772A06689800691A98 /* UsersResults.swift */,
+				278AED712A0653EE00691A98 /* UsersResultsDetails.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		278AED672A0650B500691A98 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27F7A57F2A0541C000FB8D3A /* LoginScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		278AED682A0650BB00691A98 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */,
+				278AED732A065AD700691A98 /* FriendsListViewControllerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		278AED692A0650DF00691A98 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				27F7A5832A05569D00FB8D3A /* FriendsListViewController.swift */,
+				27F7A56F2A0537B700FB8D3A /* LoginScreenViewController.swift */,
+				27F7A5852A05585400FB8D3A /* RootNavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		278AED6A2A06513300691A98 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				278AED6B2A06516B00691A98 /* UserAPI.swift */,
+				278AED6D2A06517500691A98 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		278AED792A06699900691A98 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				27F7A5812A05422000FB8D3A /* Extensions.swift */,
+				278AED6F2A06521B00691A98 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		27F7A55F2A0537B700FB8D3A = {
 			isa = PBXGroup;
 			children = (
@@ -71,14 +140,14 @@
 		27F7A56A2A0537B700FB8D3A /* FacebookFriends */ = {
 			isa = PBXGroup;
 			children = (
-				27F7A5812A05422000FB8D3A /* Extensions.swift */,
+				278AED792A06699900691A98 /* Helpers */,
+				278AED6A2A06513300691A98 /* Network */,
+				278AED662A0650AD00691A98 /* Model */,
+				278AED672A0650B500691A98 /* Views */,
+				278AED682A0650BB00691A98 /* ViewModels */,
+				278AED692A0650DF00691A98 /* Controllers */,
 				27F7A56B2A0537B700FB8D3A /* AppDelegate.swift */,
 				27F7A56D2A0537B700FB8D3A /* SceneDelegate.swift */,
-				27F7A5832A05569D00FB8D3A /* FriendsListViewController.swift */,
-				27F7A56F2A0537B700FB8D3A /* LoginScreenViewController.swift */,
-				27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */,
-				27F7A57F2A0541C000FB8D3A /* LoginScreenView.swift */,
-				27F7A5852A05585400FB8D3A /* RootNavigationController.swift */,
 				27F7A5742A0537B800FB8D3A /* Assets.xcassets */,
 				27F7A5762A0537B800FB8D3A /* LaunchScreen.storyboard */,
 				27F7A5792A0537B800FB8D3A /* Info.plist */,
@@ -92,7 +161,6 @@
 				004EE40847A12CC0B57C8CED /* Pods-FacebookFriends.debug.xcconfig */,
 				959D0F5FDBF0539FCD93E33E /* Pods-FacebookFriends.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -218,14 +286,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278AED782A06689800691A98 /* UsersResults.swift in Sources */,
 				27F7A5822A05422000FB8D3A /* Extensions.swift in Sources */,
+				278AED702A06521B00691A98 /* Constants.swift in Sources */,
 				27EB85DF2A057BE10027E339 /* LoginScreenViewViewModel.swift in Sources */,
+				278AED722A0653EE00691A98 /* UsersResultsDetails.swift in Sources */,
+				278AED6E2A06517500691A98 /* NetworkManager.swift in Sources */,
 				27F7A5802A0541C000FB8D3A /* LoginScreenView.swift in Sources */,
+				278AED762A06685000691A98 /* Users.swift in Sources */,
 				27F7A5702A0537B700FB8D3A /* LoginScreenViewController.swift in Sources */,
 				27F7A56C2A0537B700FB8D3A /* AppDelegate.swift in Sources */,
 				27F7A5842A05569D00FB8D3A /* FriendsListViewController.swift in Sources */,
 				27F7A5862A05585400FB8D3A /* RootNavigationController.swift in Sources */,
+				278AED742A065AD700691A98 /* FriendsListViewControllerViewModel.swift in Sources */,
 				27F7A56E2A0537B700FB8D3A /* SceneDelegate.swift in Sources */,
+				278AED6C2A06516B00691A98 /* UserAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

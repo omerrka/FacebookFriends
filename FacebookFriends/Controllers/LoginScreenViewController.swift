@@ -8,7 +8,7 @@
 import UIKit
 
 final class LoginScreenViewController: UIViewController {
-    
+        
     private let loginScreenView = LoginScreenView()
 
     override func viewDidLoad() {
