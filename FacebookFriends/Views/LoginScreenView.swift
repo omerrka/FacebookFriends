@@ -56,6 +56,7 @@ final class LoginScreenView: UIView {
         password.backgroundColor = .tertiarySystemBackground
         password.autocorrectionType = .no
         password.placeholder = "Enter a password"
+        password.isSecureTextEntry = true
         return password
     }()
     
