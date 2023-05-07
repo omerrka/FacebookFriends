@@ -13,7 +13,7 @@ final class LoginScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .systemBackground
         view.addSubview(loginScreenView)
         loginScreenView.delegate = self
         setUpView()

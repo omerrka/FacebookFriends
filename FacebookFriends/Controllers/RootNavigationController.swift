@@ -18,16 +18,15 @@ final class RootNavigationController: UINavigationController {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor.white
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0), .foregroundColor: UIColor.black]
         
-        self.navigationBar.tintColor = .black
+        self.navigationBar.prefersLargeTitles = true
         self.navigationBar.standardAppearance = appearance
-
+        
     }
 }
+

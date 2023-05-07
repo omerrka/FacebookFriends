@@ -29,8 +29,8 @@ final class LoginScreenView: UIView {
         user.layer.cornerRadius = 10
         user.layer.borderWidth = 2
         user.layer.borderColor = UIColor.systemGray4.cgColor
-        user.textColor = .black
-        user.tintColor = .black
+        user.textColor = .label
+        user.tintColor = .label
         user.textAlignment = .center
         user.font = UIFont.preferredFont(forTextStyle: .title2)
         user.adjustsFontSizeToFitWidth = true
@@ -47,8 +47,8 @@ final class LoginScreenView: UIView {
         password.layer.cornerRadius = 10
         password.layer.borderWidth = 2
         password.layer.borderColor = UIColor.systemGray4.cgColor
-        password.textColor = .black
-        password.tintColor = .black
+        password.textColor = .label
+        password.tintColor = .label
         password.textAlignment = .center
         password.font = UIFont.preferredFont(forTextStyle: .title2)
         password.adjustsFontSizeToFitWidth = true
