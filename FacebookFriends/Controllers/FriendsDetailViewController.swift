@@ -22,15 +22,17 @@ final class FriendsDetailViewController: UIViewController {
         fatalError("Unsported")
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
     private func setupView() {
+        
         view.backgroundColor = .systemBackground
         view.addSubview(friendsDetailView)
+        navigationItem.title = "Friend's Info"
+        navigationController?.navigationBar.prefersLargeTitles = true
         NSLayoutConstraint.activate([
             friendsDetailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             friendsDetailView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),

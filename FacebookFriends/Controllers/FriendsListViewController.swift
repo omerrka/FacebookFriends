@@ -14,7 +14,7 @@ final class FriendsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Users"
+        navigationItem.title = "Friends"
         navigationItem.setHidesBackButton(true, animated: false)
         setUpView()
 
