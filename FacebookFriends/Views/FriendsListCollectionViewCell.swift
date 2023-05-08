@@ -9,7 +9,6 @@ import UIKit
 import Kingfisher
 
 final class FriendsListCollectionViewCell: UICollectionViewCell {
-    static let cellIdentifier = "FriendsListCollectionViewCell"
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -31,12 +30,9 @@ final class FriendsListCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .secondarySystemBackground
-//        contentView.backgroundColor = UIColor(red: 17.0/255.0, green: 15.0/255.0, blue: 25.0/255.0, alpha: 1.0)
         contentView.addSubviews(imageView, nameLabel)
         addConstraints()
         setUpLayer()
-        
-        
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +50,6 @@ final class FriendsListCollectionViewCell: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -16),
-            
         ])
     }
     
@@ -72,7 +67,6 @@ final class FriendsListCollectionViewCell: UICollectionViewCell {
     public func configure(with viewModel: FriendsListCollectionViewCellViewModel) {
         nameLabel.text = viewModel.userName
         imageView.kf.setImage(with: URL(string: viewModel.userImageUrl), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-        
     }
     
     private func setUpLayer() {

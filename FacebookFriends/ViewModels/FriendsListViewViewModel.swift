@@ -6,27 +6,33 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol FriendsListViewVMDelegate: AnyObject {
     func reloadCollectionView()
-    func didSelectUser(_ user: Results)
+    func didSelectUser(_ user: MyResults)
 }
 
 final class FriendsListViewViewModel: NSObject {
     
-    private var usersResults: [Results] = [] {
+    private var usersResults: [MyResults] = [] {
         didSet {
+            var cellViewModels: [FriendsListCollectionViewCellViewModel] = []
             for userResult in usersResults {
-                let viewModel = FriendsListCollectionViewCellViewModel(userName: userResult.name.first + " " + userResult.name.last, userImageUrl: userResult.picture.large)
+                let viewModel = FriendsListCollectionViewCellViewModel(
+                    userName: userResult.name.first + " " + userResult.name.last,
+                    userImageUrl: userResult.picture.large)
                 cellViewModels.append(viewModel)
             }
+            self.cellViewModels = cellViewModels
         }
     }
     
     private var cellViewModels: [FriendsListCollectionViewCellViewModel] = []
+    private var realmResults: Results<User>?
     
     public weak var delegate: FriendsListViewVMDelegate?
-        
+    
     private let networkManager: NetworkManager
     
     init(networkManager: NetworkManager = NetworkManager()) {
@@ -34,36 +40,87 @@ final class FriendsListViewViewModel: NSObject {
     }
     
     func loadUsersListData() {
-        
         networkManager.fetchUsersResults(completion: { [weak self] result in
-            
             guard let strongSelf = self else { return }
             switch result {
             case .success(let usersResults):
                 strongSelf.usersResults = usersResults.results
+                strongSelf.saveUsersToRealm(usersResults.results)
                 strongSelf.delegate?.reloadCollectionView()
             case .failure(let error):
                 print(error.localizedDescription)
+                strongSelf.loadUsersFromRealm()
             }
         })
+    }
+    
+    private func saveUsersToRealm(_ users: [MyResults]) {
+        do {
+            let realm = try Realm()
+            let realmUsers = users.map { user -> User in
+                let realmUser = User()
+                realmUser.firstName = user.name.first
+                realmUser.lastName = user.name.last
+                realmUser.largeImageUrl = user.picture.large
+                return realmUser
+            }
+            try realm.write {
+                realm.deleteAll()
+                realm.add(realmUsers)
+            }
+        } catch let error {
+            print("Error saving users to Realm: \(error)")
+        }
+    }
+    
+    private func loadUsersFromRealm() {
+        do {
+            let realm = try Realm()
+            let results = realm.objects(User.self)
+            realmResults = results
+            var cellViewModels: [FriendsListCollectionViewCellViewModel] = []
+            for result in results {
+                let viewModel = FriendsListCollectionViewCellViewModel(
+                    userName: result.firstName + " " + result.lastName,
+                    userImageUrl: result.largeImageUrl)
+                cellViewModels.append(viewModel)
+            }
+            self.cellViewModels = cellViewModels
+            delegate?.reloadCollectionView()
+        } catch let error {
+            print("Error loading users from Realm: \(error)")
+        }
     }
 }
 
 extension FriendsListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellViewModels.count
+       
+        if let results = realmResults {
+            return results.count
+        } else {
+            return cellViewModels.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendsListCollectionViewCell.cellIdentifier, for: indexPath
-        ) as? FriendsListCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellIdentifier, for: indexPath) as? FriendsListCollectionViewCell else {
             fatalError("Unsupported cell")
         }
+        var viewModel: FriendsListCollectionViewCellViewModel
         
-        let viewModel = cellViewModels[indexPath.row]
+        if let results = realmResults {
+            let result = results[indexPath.row]
+            viewModel = FriendsListCollectionViewCellViewModel(
+                userName: result.firstName + " " + result.lastName,
+                userImageUrl: result.largeImageUrl)
+        } else {
+            let cellViewModel = cellViewModels[indexPath.row]
+            viewModel = cellViewModel
+        }
+        
         cell.configure(with: viewModel)
         return cell
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -78,6 +135,5 @@ extension FriendsListViewViewModel: UICollectionViewDataSource, UICollectionView
         collectionView.deselectItem(at: indexPath, animated: true)
         let user = usersResults[indexPath.row]
         delegate?.didSelectUser(user)
-
     }
 }

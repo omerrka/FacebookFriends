@@ -8,5 +8,6 @@ target 'FacebookFriends' do
   # Pods for FacebookFriends
 pod 'Kingfisher', '~> 7.0'
 pod 'Moya', '~> 15.0'
+pod 'RealmSwift', '~>10'
 
 end

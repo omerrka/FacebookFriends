@@ -20,6 +20,7 @@
 		2791AA502A06962E00719D5A /* FriendsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791AA4F2A06962E00719D5A /* FriendsDetailViewController.swift */; };
 		2791AA522A06970400719D5A /* FriendsDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791AA512A06970400719D5A /* FriendsDetailViewViewModel.swift */; };
 		2791AA542A069C7500719D5A /* FriendsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791AA532A069C7500719D5A /* FriendsDetailView.swift */; };
+		27DAD0B42A07E1B2009AB100 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAD0B32A07E1B2009AB100 /* Realm.swift */; };
 		27EB85DF2A057BE10027E339 /* LoginScreenViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */; };
 		27F7A56C2A0537B700FB8D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A56B2A0537B700FB8D3A /* AppDelegate.swift */; };
 		27F7A56E2A0537B700FB8D3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A56D2A0537B700FB8D3A /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		2791AA4F2A06962E00719D5A /* FriendsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailViewController.swift; sourceTree = "<group>"; };
 		2791AA512A06970400719D5A /* FriendsDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailViewViewModel.swift; sourceTree = "<group>"; };
 		2791AA532A069C7500719D5A /* FriendsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailView.swift; sourceTree = "<group>"; };
+		27DAD0B32A07E1B2009AB100 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewViewModel.swift; sourceTree = "<group>"; };
 		27F7A5682A0537B700FB8D3A /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F7A56B2A0537B700FB8D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				27F7A5812A05422000FB8D3A /* Extensions.swift */,
 				278AED6F2A06521B00691A98 /* Constants.swift */,
+				27DAD0B32A07E1B2009AB100 /* Realm.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				278AED782A06689800691A98 /* UsersResults.swift in Sources */,
 				27F7A5822A05422000FB8D3A /* Extensions.swift in Sources */,
 				278AED702A06521B00691A98 /* Constants.swift in Sources */,
+				27DAD0B42A07E1B2009AB100 /* Realm.swift in Sources */,
 				27EB85DF2A057BE10027E339 /* LoginScreenViewViewModel.swift in Sources */,
 				2791AA522A06970400719D5A /* FriendsDetailViewViewModel.swift in Sources */,
 				2791AA4C2A066C0200719D5A /* FriendsListCollectionViewCellViewModel.swift in Sources */,

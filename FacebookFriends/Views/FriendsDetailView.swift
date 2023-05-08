@@ -171,7 +171,6 @@ final class FriendsDetailView: UIView {
         addSubviews(logoImageView, mainInfoFieldStackView, locationInfoBackgroundView, locationInfoFieldStackView, personalInfoBackgroundView, personalInfoFieldStackView)
         configureView(with: viewModel)
         addConstraints()
-        
     }
     
     required init?(coder: NSCoder) {

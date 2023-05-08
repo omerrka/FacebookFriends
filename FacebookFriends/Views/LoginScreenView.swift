@@ -90,7 +90,6 @@ final class LoginScreenView: UIView {
         textFieldStackView.addArrangedSubview(passwordTextField)
         addConstraints()
         addTapGestureRecognizer()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -114,7 +113,6 @@ final class LoginScreenView: UIView {
             loginButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -48),
             loginButton.heightAnchor.constraint(equalToConstant: 48),
-            
         ])
     }
     

@@ -8,5 +8,5 @@
 import Foundation
 
 struct Users: Codable {
-    let results: [Results]
+    let results: [MyResults]
 }

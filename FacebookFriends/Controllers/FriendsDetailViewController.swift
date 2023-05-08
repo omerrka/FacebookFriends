@@ -11,13 +11,13 @@ final class FriendsDetailViewController: UIViewController {
     
     private let viewModel: FriendsDetailViewViewModel
     private let friendsDetailView: FriendsDetailView
-
+    
     init(viewModel: FriendsDetailViewViewModel) {
         self.viewModel = viewModel
         self.friendsDetailView = FriendsDetailView(viewModel: viewModel)
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("Unsported")
     }
@@ -41,8 +41,8 @@ final class FriendsDetailViewController: UIViewController {
         ])
     }
 }
-    
 
-   
+
+
 
 

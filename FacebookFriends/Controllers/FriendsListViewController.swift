@@ -10,16 +10,15 @@ import UIKit
 final class FriendsListViewController: UIViewController {
     
     private let friendsListView = FriendsListView()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Friends"
         navigationItem.setHidesBackButton(true, animated: false)
         setUpView()
-
     }
-
+    
     private func setUpView() {
         friendsListView.delegate = self
         view.addSubview(friendsListView)
@@ -33,7 +32,7 @@ final class FriendsListViewController: UIViewController {
 }
 
 extension FriendsListViewController: FriendsListViewDelegate {
-    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: Results) {
+    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: MyResults) {
         let viewModel = FriendsDetailViewViewModel(user: user)
         let detailVC = FriendsDetailViewController(viewModel: viewModel)
         detailVC.navigationItem.largeTitleDisplayMode = .never

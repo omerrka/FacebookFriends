@@ -18,7 +18,7 @@ protocol Networkable {
 class NetworkManager: Networkable {
     
     var provider = MoyaProvider<API>(plugins: [NetworkLoggerPlugin()])
-
+    
     func fetchUsersResults(completion: @escaping (Result<Users, Error>) -> ()) {
         request(target: .usersList, completion: completion)
     }

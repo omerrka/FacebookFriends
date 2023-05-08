@@ -21,12 +21,10 @@ final class RootNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         appearance.configureWithOpaqueBackground()
         
         self.navigationBar.prefersLargeTitles = true
         self.navigationBar.standardAppearance = appearance
-        
     }
 }
 

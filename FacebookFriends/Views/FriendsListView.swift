@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FriendsListViewDelegate: AnyObject {
-    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: Results)
+    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: MyResults)
 }
 
 final class FriendsListView: UIView {
@@ -25,7 +25,7 @@ final class FriendsListView: UIView {
         collectionView.alpha = 1
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(FriendsListCollectionViewCell.self,
-                                forCellWithReuseIdentifier: FriendsListCollectionViewCell.cellIdentifier)
+                                forCellWithReuseIdentifier: Constants.cellIdentifier)
         return collectionView
     }()
     
@@ -44,7 +44,6 @@ final class FriendsListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func addConstraints() {
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: topAnchor),
@@ -61,10 +60,10 @@ final class FriendsListView: UIView {
 }
 
 extension FriendsListView: FriendsListViewVMDelegate {
-    func didSelectUser(_ user: Results) {
+    func didSelectUser(_ user: MyResults) {
         delegate?.friendsListView(self, didSelectUser: user)
     }
-
+    
     func reloadCollectionView() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()

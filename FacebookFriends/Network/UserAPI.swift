@@ -38,7 +38,7 @@ extension API: TargetType {
         switch self {
         case .usersList:
             return .requestParameters(parameters: ["results": "20"], encoding: URLEncoding.queryString)
-
+            
         }
     }
     

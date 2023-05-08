@@ -10,4 +10,5 @@ import UIKit
 class Constants {
     
     static let baseURL = "https://randomuser.me/api/"
+    static let cellIdentifier = "FriendsListCollectionViewCell"
 }
