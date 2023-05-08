@@ -9,15 +9,14 @@
 import Moya
 
 protocol Networkable {
-    var provider: MoyaProvider<API> { get }
+    var provider: MoyaProvider<UserAPI> { get }
     
     func fetchUsersResults(completion: @escaping (Result<Users, Error>) -> ())
     
 }
 
 class NetworkManager: Networkable {
-    
-    var provider = MoyaProvider<API>(plugins: [NetworkLoggerPlugin()])
+    var provider = MoyaProvider<UserAPI>(plugins: [NetworkLoggerPlugin()])
     
     func fetchUsersResults(completion: @escaping (Result<Users, Error>) -> ()) {
         request(target: .usersList, completion: completion)
@@ -25,7 +24,7 @@ class NetworkManager: Networkable {
 }
 
 private extension NetworkManager {
-    private func request<T: Decodable>(target: API, completion: @escaping (Result<T, Error>) -> ()) {
+    private func request<T: Decodable>(target: UserAPI, completion: @escaping (Result<T, Error>) -> ()) {
         provider.request(target) { result in
             switch result {
             case let .success(response):

@@ -9,7 +9,6 @@ import UIKit
 import Kingfisher
 
 final class FriendsListCollectionViewCell: UICollectionViewCell {
-    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill

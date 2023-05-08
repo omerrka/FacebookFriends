@@ -8,11 +8,10 @@
 import UIKit
 
 protocol FriendsListViewDelegate: AnyObject {
-    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: MyResults)
+    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: UsersResults)
 }
 
 final class FriendsListView: UIView {
-    
     public weak var delegate: FriendsListViewDelegate?
     
     private let viewModel = FriendsListViewViewModel()
@@ -60,7 +59,7 @@ final class FriendsListView: UIView {
 }
 
 extension FriendsListView: FriendsListViewVMDelegate {
-    func didSelectUser(_ user: MyResults) {
+    func didSelectUser(_ user: UsersResults) {
         delegate?.friendsListView(self, didSelectUser: user)
     }
     

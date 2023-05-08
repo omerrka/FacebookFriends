@@ -9,7 +9,6 @@ import UIKit
 import Kingfisher
 
 final class FriendsDetailView: UIView {
-    
     var friendsDetailViewViewModel: FriendsDetailViewViewModel
     
     private let logoImageView: UIImageView = {
@@ -168,7 +167,6 @@ final class FriendsDetailView: UIView {
         self.friendsDetailViewViewModel = viewModel
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubviews(logoImageView, mainInfoFieldStackView, locationInfoBackgroundView, locationInfoFieldStackView, personalInfoBackgroundView, personalInfoFieldStackView)
         configureView(with: viewModel)
         addConstraints()
     }
@@ -179,7 +177,6 @@ final class FriendsDetailView: UIView {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            
             logoImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
             logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
             logoImageView.heightAnchor.constraint(equalToConstant: 150),
@@ -213,6 +210,7 @@ final class FriendsDetailView: UIView {
     }
     
     private func configureView(with viewModel: FriendsDetailViewViewModel) {
+        addSubviews(logoImageView, mainInfoFieldStackView, locationInfoBackgroundView, locationInfoFieldStackView, personalInfoBackgroundView, personalInfoFieldStackView)
         
         mainInfoFieldStackView.addArrangedSubview(nameLabel)
         mainInfoFieldStackView.addArrangedSubview(countryLabel)

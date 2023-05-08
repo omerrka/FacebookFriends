@@ -12,7 +12,6 @@ protocol LoginScreenViewDelegate: AnyObject {
 }
     
 final class LoginScreenView: UIView {
-    
     private let loginScreenViewViewModel = LoginScreenViewViewModel()
     public weak var delegate: LoginScreenViewDelegate?
     

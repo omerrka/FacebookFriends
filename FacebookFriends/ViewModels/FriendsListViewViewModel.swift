@@ -10,12 +10,11 @@ import RealmSwift
 
 protocol FriendsListViewVMDelegate: AnyObject {
     func reloadCollectionView()
-    func didSelectUser(_ user: MyResults)
+    func didSelectUser(_ user: UsersResults)
 }
 
 final class FriendsListViewViewModel: NSObject {
-    
-    private var usersResults: [MyResults] = [] {
+    private var usersResults: [UsersResults] = [] {
         didSet {
             var cellViewModels: [FriendsListCollectionViewCellViewModel] = []
             for userResult in usersResults {
@@ -29,7 +28,7 @@ final class FriendsListViewViewModel: NSObject {
     }
     
     private var cellViewModels: [FriendsListCollectionViewCellViewModel] = []
-    private var realmResults: Results<User>?
+    private var realmResults: Results<SavedUsers>?
     
     public weak var delegate: FriendsListViewVMDelegate?
     
@@ -54,11 +53,11 @@ final class FriendsListViewViewModel: NSObject {
         })
     }
     
-    private func saveUsersToRealm(_ users: [MyResults]) {
+    private func saveUsersToRealm(_ users: [UsersResults]) {
         do {
             let realm = try Realm()
-            let realmUsers = users.map { user -> User in
-                let realmUser = User()
+            let realmUsers = users.map { user -> SavedUsers in
+                let realmUser = SavedUsers()
                 realmUser.firstName = user.name.first
                 realmUser.lastName = user.name.last
                 realmUser.largeImageUrl = user.picture.large
@@ -76,7 +75,7 @@ final class FriendsListViewViewModel: NSObject {
     private func loadUsersFromRealm() {
         do {
             let realm = try Realm()
-            let results = realm.objects(User.self)
+            let results = realm.objects(SavedUsers.self)
             realmResults = results
             var cellViewModels: [FriendsListCollectionViewCellViewModel] = []
             for result in results {
@@ -95,7 +94,6 @@ final class FriendsListViewViewModel: NSObject {
 
 extension FriendsListViewViewModel: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
         if let results = realmResults {
             return results.count
         } else {
@@ -133,6 +131,8 @@ extension FriendsListViewViewModel: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        guard !usersResults.isEmpty else { return }
+
         let user = usersResults[indexPath.row]
         delegate?.didSelectUser(user)
     }

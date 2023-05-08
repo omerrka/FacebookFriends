@@ -1,7 +1,8 @@
 .DS_Store
 
 # Cocoapods
-Pods/
+Pods/Realm
+Pods/RealmSwift
 
 # Xcode
 #

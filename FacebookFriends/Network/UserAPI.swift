@@ -7,12 +7,11 @@
 
 import Moya
 
-enum API {
-    
+enum UserAPI {
     case usersList
 }
 
-extension API: TargetType {
+extension UserAPI: TargetType {
     var baseURL: URL {
         guard let url = URL(string: Constants.baseURL) else { fatalError() }
         return url
@@ -34,7 +33,6 @@ extension API: TargetType {
     }
     
     var task: Task {
-        
         switch self {
         case .usersList:
             return .requestParameters(parameters: ["results": "20"], encoding: URLEncoding.queryString)

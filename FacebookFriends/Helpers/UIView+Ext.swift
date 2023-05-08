@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  UIView+Ext.swift
 //  FacebookFriends
 //
 //  Created by Ömer Karabulut on 5.05.2023.

@@ -8,7 +8,6 @@
 import UIKit
 
 final class RootNavigationController: UINavigationController {
-    
     let appearance = UINavigationBarAppearance()
     
     override init(rootViewController: UIViewController) {

@@ -8,7 +8,6 @@
 import UIKit
 
 final class LoginScreenViewController: UIViewController {
-    
     private let loginScreenView = LoginScreenView()
     
     override func viewDidLoad() {
@@ -32,7 +31,6 @@ final class LoginScreenViewController: UIViewController {
 extension LoginScreenViewController: LoginScreenViewDelegate {
     func pushViewController() {
         let vc = FriendsListViewController()
-        navigationController?.pushViewController(vc, animated: false)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
-

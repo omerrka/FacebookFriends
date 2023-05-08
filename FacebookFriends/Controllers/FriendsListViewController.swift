@@ -8,7 +8,6 @@
 import UIKit
 
 final class FriendsListViewController: UIViewController {
-    
     private let friendsListView = FriendsListView()
     
     override func viewDidLoad() {
@@ -32,7 +31,7 @@ final class FriendsListViewController: UIViewController {
 }
 
 extension FriendsListViewController: FriendsListViewDelegate {
-    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: MyResults) {
+    func friendsListView(_ friendsListView: FriendsListView, didSelectUser user: UsersResults) {
         let viewModel = FriendsDetailViewViewModel(user: user)
         let detailVC = FriendsDetailViewController(viewModel: viewModel)
         detailVC.navigationItem.largeTitleDisplayMode = .never

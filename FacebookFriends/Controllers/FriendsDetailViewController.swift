@@ -4,11 +4,9 @@
 //
 //  Created by Ömer Karabulut on 6.05.2023.
 //
-
 import UIKit
 
 final class FriendsDetailViewController: UIViewController {
-    
     private let viewModel: FriendsDetailViewViewModel
     private let friendsDetailView: FriendsDetailView
     
@@ -28,7 +26,6 @@ final class FriendsDetailViewController: UIViewController {
     }
     
     private func setupView() {
-        
         view.backgroundColor = .systemBackground
         view.addSubview(friendsDetailView)
         navigationItem.title = "Friend's Info"

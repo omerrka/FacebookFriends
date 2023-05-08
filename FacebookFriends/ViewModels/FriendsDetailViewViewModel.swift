@@ -8,10 +8,9 @@
 import Foundation
 
 final class FriendsDetailViewViewModel {
+    private let user: UsersResults
     
-    private let user: MyResults
-    
-    init(user: MyResults) {
+    init(user: UsersResults) {
         self.user = user
     }
     

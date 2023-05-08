@@ -20,7 +20,7 @@
 		2791AA502A06962E00719D5A /* FriendsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791AA4F2A06962E00719D5A /* FriendsDetailViewController.swift */; };
 		2791AA522A06970400719D5A /* FriendsDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791AA512A06970400719D5A /* FriendsDetailViewViewModel.swift */; };
 		2791AA542A069C7500719D5A /* FriendsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2791AA532A069C7500719D5A /* FriendsDetailView.swift */; };
-		27DAD0B42A07E1B2009AB100 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAD0B32A07E1B2009AB100 /* Realm.swift */; };
+		27DAD0B42A07E1B2009AB100 /* SavedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DAD0B32A07E1B2009AB100 /* SavedUsers.swift */; };
 		27EB85DF2A057BE10027E339 /* LoginScreenViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */; };
 		27F7A56C2A0537B700FB8D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A56B2A0537B700FB8D3A /* AppDelegate.swift */; };
 		27F7A56E2A0537B700FB8D3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A56D2A0537B700FB8D3A /* SceneDelegate.swift */; };
@@ -28,7 +28,7 @@
 		27F7A5752A0537B800FB8D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27F7A5742A0537B800FB8D3A /* Assets.xcassets */; };
 		27F7A5782A0537B800FB8D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27F7A5762A0537B800FB8D3A /* LaunchScreen.storyboard */; };
 		27F7A5802A0541C000FB8D3A /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A57F2A0541C000FB8D3A /* LoginScreenView.swift */; };
-		27F7A5822A05422000FB8D3A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A5812A05422000FB8D3A /* Extensions.swift */; };
+		27F7A5822A05422000FB8D3A /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A5812A05422000FB8D3A /* UIView+Ext.swift */; };
 		27F7A5842A05569D00FB8D3A /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A5832A05569D00FB8D3A /* FriendsListViewController.swift */; };
 		27F7A5862A05585400FB8D3A /* RootNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7A5852A05585400FB8D3A /* RootNavigationController.swift */; };
 		F9A9F6F716A9E8C6907825DE /* Pods_FacebookFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B03289E736E14B5EE11ACC /* Pods_FacebookFriends.framework */; };
@@ -50,7 +50,7 @@
 		2791AA4F2A06962E00719D5A /* FriendsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailViewController.swift; sourceTree = "<group>"; };
 		2791AA512A06970400719D5A /* FriendsDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailViewViewModel.swift; sourceTree = "<group>"; };
 		2791AA532A069C7500719D5A /* FriendsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailView.swift; sourceTree = "<group>"; };
-		27DAD0B32A07E1B2009AB100 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		27DAD0B32A07E1B2009AB100 /* SavedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedUsers.swift; sourceTree = "<group>"; };
 		27EB85DE2A057BE10027E339 /* LoginScreenViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewViewModel.swift; sourceTree = "<group>"; };
 		27F7A5682A0537B700FB8D3A /* FacebookFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F7A56B2A0537B700FB8D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		27F7A5772A0537B800FB8D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27F7A5792A0537B800FB8D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F7A57F2A0541C000FB8D3A /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
-		27F7A5812A05422000FB8D3A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		27F7A5812A05422000FB8D3A /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		27F7A5832A05569D00FB8D3A /* FriendsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		27F7A5852A05585400FB8D3A /* RootNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationController.swift; sourceTree = "<group>"; };
 		959D0F5FDBF0539FCD93E33E /* Pods-FacebookFriends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriends.release.xcconfig"; path = "Target Support Files/Pods-FacebookFriends/Pods-FacebookFriends.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 		278AED792A06699900691A98 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				27F7A5812A05422000FB8D3A /* Extensions.swift */,
+				27F7A5812A05422000FB8D3A /* UIView+Ext.swift */,
 				278AED6F2A06521B00691A98 /* Constants.swift */,
-				27DAD0B32A07E1B2009AB100 /* Realm.swift */,
+				27DAD0B32A07E1B2009AB100 /* SavedUsers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -308,9 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				278AED782A06689800691A98 /* UsersResults.swift in Sources */,
-				27F7A5822A05422000FB8D3A /* Extensions.swift in Sources */,
+				27F7A5822A05422000FB8D3A /* UIView+Ext.swift in Sources */,
 				278AED702A06521B00691A98 /* Constants.swift in Sources */,
-				27DAD0B42A07E1B2009AB100 /* Realm.swift in Sources */,
+				27DAD0B42A07E1B2009AB100 /* SavedUsers.swift in Sources */,
 				27EB85DF2A057BE10027E339 /* LoginScreenViewViewModel.swift in Sources */,
 				2791AA522A06970400719D5A /* FriendsDetailViewViewModel.swift in Sources */,
 				2791AA4C2A066C0200719D5A /* FriendsListCollectionViewCellViewModel.swift in Sources */,
@@ -472,8 +472,8 @@
 				INFOPLIST_FILE = FacebookFriends/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,8 +499,8 @@
 				INFOPLIST_FILE = FacebookFriends/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
