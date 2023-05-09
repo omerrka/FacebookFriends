@@ -11,6 +11,16 @@
 
 
 
+## How to Use
+
+#### Before starting the application, follow the steps below.
+
+`pod repo update`
+
+`pod install` 
+
+
+
 ## Screens
 
 <p>
